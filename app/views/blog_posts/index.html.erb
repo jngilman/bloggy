@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Current Blog Posts</h1>
+<div class = "row">
+
+  <% @blog_posts.each do |blog_post| %>
+  <div class ="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel panel-heading">
+        
+        <%= link_to blog_post.title, blog_post  %>
+      </div>
+      <div class="panel panel-body">
+        by <%= blog_post.author %> <br>
+        <p>
+          <%=  blog_post.blog_entry[0..249] %>.... <%= link_to 'Show', blog_post, class: "btn btn-primary" %>
+        </p>
+      </div>
+      <div class="panel panel-footer">
+        
+      
+        <%= link_to 'Edit', edit_blog_post_path(blog_post), class: "btn btn-primary" %>
+        <%= link_to 'Destroy', blog_post, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+
+  </div>
+
+  <% end %>
+</div>
