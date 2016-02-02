@@ -5,7 +5,7 @@
 	</div>
 <div class="panel-body">
 	
-<p>by <%= @blog_post.author %> at <%=  @blog_post.created_at  %>
+<p>by <%= @blog_post.author %> on <%=  @blog_post.created_at.strftime('%a %b %d %Y %l%p')  %>
 	</p>
 
 <p><%= @blog_post.blog_entry %>
