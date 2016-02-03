@@ -11,7 +11,7 @@
         <%= link_to blog_post.title, blog_post  %>
       </div>
       <div class="panel panel-body">
-        by <%= blog_post.author %> <br>
+        by <%= blog_post.user.username %> <br>
         <p>
           <%=  blog_post.blog_entry[0..249] %>.... <%= link_to 'Show', blog_post, class: "btn btn-primary" %>
         </p>
