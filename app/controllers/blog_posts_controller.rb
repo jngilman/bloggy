@@ -3,6 +3,15 @@ class BlogPostsController < ApplicationController
 
   # GET /blog_posts
   # GET /blog_posts.json
+  def your_posts
+    
+  end
+
+  def user_posts
+    @user = User.find(params[:id])
+    
+  end
+
   def index
     @blog_posts = BlogPost.all
   end

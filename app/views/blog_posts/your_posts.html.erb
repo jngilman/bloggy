@@ -1,17 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1>Your Posts</h1>
 
-<h1>Current Blog Posts</h1>
-<div class = "row">
-
-  <% @blog_posts.each do |blog_post| %>
-  <div class ="col-md-6">
+<% current_user.blog_posts.each do |blog_post| %>
+<div class ="col-md-12">
     <div class="panel panel-default">
       <div class="panel panel-heading">
         
         <%= link_to blog_post.title, blog_post  %>
       </div>
       <div class="panel panel-body">
-        by <%= link_to blog_post.user.username, user_posts_path(id: blog_post.user.id) %> <br>
+        by <%= blog_post.user.username %> <br>
         <p>
           <%=  blog_post.blog_entry[0..249] %>.... <%= link_to 'Show', blog_post, class: "btn btn-primary" %>
         </p>
@@ -27,5 +24,7 @@
 
   </div>
 
-  <% end %>
-</div>
+
+
+
+<% end %>
